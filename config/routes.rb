@@ -1,9 +1,12 @@
 SimpleCms::Application.routes.draw do
+
+  root :to => "demo#index"
+
   #get "demo/index"
   #get "demo/test"
 
   # simple routes, matches the EXACT string so less desirable
-  match "demoMIKEindex", :to => "demo#index"
+  # match "demoMIKEindex", :to => "demo#index"
   # match "demo/heres_another_url_to_index", :to => "demo#index"
 
   # The priority is based upon order of creation:
@@ -56,7 +59,7 @@ SimpleCms::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   # root :to => "welcome#index"
-   root :to => "demo#index"
+
 
   # See how all your routes lay out with "rake routes"
 

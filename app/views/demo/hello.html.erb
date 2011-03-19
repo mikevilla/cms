@@ -1,5 +1,57 @@
 <h1>Demo#hello</h1>
 <p>Hello World app/views/demo/index.html.erb</p>
 
+<hr>
+
+<p>Outputing ruby results using erb</p>
+<%= 1 + 1 %>
+
+<br>
+
+<hr>
+
+<% 3.times do |x|
+    if x == 3 || x == 1 %>
+    <strong>  <%= "GO" %>      </strong>
+    <% else %>
+     <%= "Team" %>
+    <% end %>
+<% end %>
+
+<hr>
+
+
+
+<% 1.upto(100) {|n|  %>
+
+    <% if n % 4 == 0 and n % 6 == 0 %>
+    Hello World <br>
+    <% elsif n % 4 == 0 %>
+    Hello <br>
+    <% elsif n % 6 == 0 %>
+    World <br>
+    <% else %>
+    <%= n %> <br>
+    <% end %>
+<% } %>
+
+<hr>
+<% target = "world" %>
+<%= "Hello #{target}" %>
+
+
 <p>This is the output of the Array</p>
 <%= @array_list.each { |num|  puts num.to_s } %>
+
+<hr>
+ID: <%= @id %> <br/>
+Next Page: <%= @next_page %>
+
+
+<hr>
+<%= link_to("Click Me 1 /demo/index", '/demo/index') %> <br>
+<%= link_to("Click Me 2 :controller => 'demo', :action => 'index'", {:controller => 'demo', :action => 'index'}) %> <br>
+<%= link_to("Click Me 3 :action => 'index'", {:action => 'index'}) %> <br>
+<hr>
+
+<%= params.inspect %>
