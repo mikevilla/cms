@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110320223715) do
+ActiveRecord::Schema.define(:version => 20110324225126) do
 
   create_table "admin_users", :force => true do |t|
     t.string   "first_name",      :limit => 25
@@ -24,6 +24,15 @@ ActiveRecord::Schema.define(:version => 20110320223715) do
   end
 
   add_index "admin_users", ["username"], :name => "index_admin_users_on_username"
+
+  create_table "admin_users_pages", :id => false, :force => true do |t|
+    t.integer  "admin_user_id"
+    t.integer  "page_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "admin_users_pages", ["admin_user_id", "page_id"], :name => "index_admin_users_pages_on_admin_user_id_and_page_id"
 
   create_table "pages", :force => true do |t|
     t.integer  "subject_id"
